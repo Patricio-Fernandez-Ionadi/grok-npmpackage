@@ -1,42 +1,3 @@
-export const Eye_icon = (props) => {
-	const {
-		size = 200,
-		strokeWidth = 1.5,
-		color = 'currentColor',
-		getProps,
-	} = props
-
-	if (getProps)
-		console.log({ size: 'Number', strokeWidth: 'Number', color: 'String' })
-
-	return (
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			fill="none"
-			viewBox="0 0 24 24"
-			strokeWidth={strokeWidth}
-			stroke={color}
-			width={size}
-			height={size}
-			style={{
-				position: 'relative',
-				top: '5px',
-			}}
-		>
-			<path
-				strokeLinecap="round"
-				strokeLinejoin="round"
-				d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
-			/>
-			<path
-				strokeLinecap="round"
-				strokeLinejoin="round"
-				d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-			/>
-		</svg>
-	)
-}
-
 export const Exlamation_triangle = () => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
@@ -53,42 +14,6 @@ export const Exlamation_triangle = () => (
 		/>
 	</svg>
 )
-
-export const Exlamation_cicle = (props) => {
-	const {
-		strokeWidth = 1.5,
-		size = 200,
-		color = 'currentColor',
-		fill = 'none',
-		getProps,
-	} = props
-
-	if (getProps)
-		console.log({
-			strokeWidth: 'Number',
-			size: 'Number',
-			color: 'String',
-			fill: 'String',
-		})
-
-	return (
-		<svg
-			// xmlns="http://www.w3.org/2000/svg"
-			fill={fill}
-			viewBox="0 0 24 24"
-			strokeWidth={strokeWidth}
-			stroke={color}
-			width={size}
-			height={size}
-		>
-			<path
-				strokeLinecap="round"
-				strokeLinejoin="round"
-				d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
-			/>
-		</svg>
-	)
-}
 
 //  =(
 export const Face_frown = () => (
@@ -124,26 +49,3 @@ export const Cube_transparent = () => (
 		/>
 	</svg>
 )
-
-export const Arrow_left = (props) => {
-	const { size, color = '#222', strokeWidth = 1, getProps } = props
-
-	if (getProps)
-		console.log({ size: 'Number', color: 'String', strokeWidth: 'Number' })
-
-	return (
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 24 24"
-			fill={color}
-			width={size}
-			height={size}
-		>
-			<path
-				fillRule="evenodd"
-				d="M9.53 2.47a.75.75 0 0 1 0 1.06L4.81 8.25H15a6.75 6.75 0 0 1 0 13.5h-3a.75.75 0 0 1 0-1.5h3a5.25 5.25 0 1 0 0-10.5H4.81l4.72 4.72a.75.75 0 1 1-1.06 1.06l-6-6a.75.75 0 0 1 0-1.06l6-6a.75.75 0 0 1 1.06 0Z"
-				clipRule="evenodd"
-			/>
-		</svg>
-	)
-}

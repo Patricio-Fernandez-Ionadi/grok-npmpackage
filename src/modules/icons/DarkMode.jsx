@@ -1,4 +1,4 @@
-export const Dark_icon = (props) => {
+export const DarkMode_icon = (props) => {
 	const { size = 200, color = 'currentColor', fill = 'none', getProps } = props
 
 	if (getProps) console.log({ size: 'Number', color: 'String', fill: 'String' })

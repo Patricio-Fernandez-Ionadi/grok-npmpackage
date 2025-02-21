@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* para cdo se cree un package independiente */
 .groker__input-label {
   transition: background 0.2s ease;
   position: absolute;

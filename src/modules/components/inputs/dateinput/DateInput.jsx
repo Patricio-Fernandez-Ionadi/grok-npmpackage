@@ -1,6 +1,5 @@
 import React from 'react'
-import { Calendar_icon } from '../../../icons'
-
+import { Calendar } from '../../../icons'
 export const DateInput = React.forwardRef(function DateInput(props, ref) {
 	const {
 		theme,
@@ -39,7 +38,7 @@ export const DateInput = React.forwardRef(function DateInput(props, ref) {
 					onClick={click}
 					aria-label="Abrir selector de fecha"
 				>
-					<Calendar_icon size={iconSize} />
+					<Calendar size={iconSize} />
 				</button>
 			</div>
 		</>

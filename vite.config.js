@@ -13,7 +13,11 @@ export default defineConfig({
 				date: path.resolve(__dirname, 'src/modules/date/index.js'),
 			},
 			name: 'Groker',
-			fileName: (format, entryName) => `${entryName}.${format}.js`,
+			fileName: (format, entryName) => {
+				if (entryName === 'index') return `${entryName}.${format}.js`
+
+				return `${entryName}/${entryName}.${format}.js`
+			},
 		},
 		rollupOptions: {
 			external: ['react', 'react-dom'], // Excluye React y ReactDOM del bundle

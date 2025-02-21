@@ -1,4 +1,4 @@
-import { j as l } from "./Calendar_icon-DhO_pceK.js";
+import { j as l } from "./Calendar-SM-gaS4s.js";
 const c = (r) => {
   const { size: o, color: e = "currentColor", getProps: n } = r;
   return n && console.log({
@@ -32,7 +32,7 @@ const c = (r) => {
       ]
     }
   );
-}, g = (r) => {
+}, d = (r) => {
   const { size: o, color: e = "currentColor", getProps: n } = r;
   return n && console.log({
     size: "number",
@@ -65,13 +65,13 @@ const c = (r) => {
       ]
     }
   );
-}, h = (r) => {
+}, g = (r) => {
   const {
     strokeWidth: o = 1.5,
     size: e = 200,
     color: n = "currentColor",
-    fill: i = "none",
-    onEvent: t,
+    fill: t = "none",
+    onEvent: i,
     getProps: s
   } = r;
   return s && console.log({
@@ -84,13 +84,13 @@ const c = (r) => {
     "svg",
     {
       xmlns: "http://www.w3.org/2000/svg",
-      fill: i,
+      fill: t,
       viewBox: "0 0 24 24",
       strokeWidth: o,
       stroke: n,
       width: e,
       height: e,
-      onClick: t,
+      onClick: i,
       style: { cursor: "pointer" },
       children: /* @__PURE__ */ l.jsx(
         "path",
@@ -102,9 +102,9 @@ const c = (r) => {
       )
     }
   );
-}, d = (r) => {
-  const { size: o = 200, color: e = "currentColor", fill: n = "none", getProps: i } = r;
-  return i && console.log({ size: "Number", color: "String", fill: "String" }), /* @__PURE__ */ l.jsx(
+}, h = (r) => {
+  const { size: o = 200, color: e = "currentColor", fill: n = "none", getProps: t } = r;
+  return t && console.log({ size: "Number", color: "String", fill: "String" }), /* @__PURE__ */ l.jsx(
     "svg",
     {
       xmlns: "http://www.w3.org/2000/svg",
@@ -116,8 +116,8 @@ const c = (r) => {
     }
   );
 }, v = (r) => {
-  const { size: o = 200, color: e = "currentColor", fill: n = "none", getProps: i } = r;
-  return i && console.log({ size: "Number", color: "String", fill: "String" }), /* @__PURE__ */ l.jsx(
+  const { size: o = 200, color: e = "currentColor", fill: n = "none", getProps: t } = r;
+  return t && console.log({ size: "Number", color: "String", fill: "String" }), /* @__PURE__ */ l.jsx(
     "svg",
     {
       xmlns: "http://www.w3.org/2000/svg",
@@ -140,10 +140,10 @@ const c = (r) => {
     size: o = 200,
     color: e = "currentColor",
     fill: n = "none",
-    onEvent: i,
-    getProps: t
+    onEvent: t,
+    getProps: i
   } = r;
-  return t && console.log({
+  return i && console.log({
     size: "Number",
     color: "String",
     fill: "String",
@@ -156,7 +156,7 @@ const c = (r) => {
       fill: e,
       width: o,
       height: o,
-      onClick: i,
+      onClick: t,
       style: { cursor: "pointer" },
       children: [
         /* @__PURE__ */ l.jsx("path", { d: "M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" }),
@@ -192,8 +192,8 @@ export {
   c as C,
   v as D,
   u as E,
-  d as L,
-  g as a,
-  h as b,
+  h as L,
+  d as a,
+  g as b,
   w as c
 };

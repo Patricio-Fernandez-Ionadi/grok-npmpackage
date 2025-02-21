@@ -1,4 +1,4 @@
-export const Calendar_icon = (props) => {
+export const Calendar = (props) => {
 	const { size, color = 'currentColor', getProps } = props
 
 	if (getProps)
