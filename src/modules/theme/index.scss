@@ -1,0 +1,10 @@
+// independientes
+@import './_sizes.scss';
+@import './_colors.scss';
+@import './_animations.scss';
+
+// dependientes
+@import './_mixins.scss'; // color - animations
+
+// module
+@import '../components/index';
