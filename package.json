@@ -1,6 +1,6 @@
 {
 	"name": "groker",
-	"version": "1.1.4",
+	"version": "1.1.5",
 	"description": "Una biblioteca de componentes reutilizables para React",
 	"type": "module",
 	"module": "./dist/groker.es.js",
