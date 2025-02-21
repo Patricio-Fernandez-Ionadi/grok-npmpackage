@@ -7,9 +7,9 @@
 	"main": "./dist/index.cjs.js",
 	"exports": {
 		".": "./dist/index.es.js",
-		"./components": "./dist/components.es.js",
-		"./icons": "./dist/icons.es.js",
-		"./date": "./dist/date.es.js",
+		"./components": "./dist/components/components.es.js",
+		"./icons": "./dist/icons/icons.es.js",
+		"./date": "./dist/date/date.es.js",
 		"./dist/groker.css": "./dist/groker.css"
 	},
 	"files": [
