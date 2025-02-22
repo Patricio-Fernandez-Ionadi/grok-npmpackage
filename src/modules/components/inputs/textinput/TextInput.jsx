@@ -4,10 +4,10 @@ export const TextInput = React.forwardRef(function TextInput(props, ref) {
 	const {
 		label,
 		defaultValue = '',
-		name,
+		name = '',
 		type = 'text',
 		className = '',
-		theme,
+		theme = 'light',
 	} = props
 
 	return (
