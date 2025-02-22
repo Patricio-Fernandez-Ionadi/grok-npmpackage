@@ -53,10 +53,12 @@
 }
 .groker__input-field .custom-date-input {
   background: transparent;
+  width: 90%;
   font-size: inherit;
   outline: none;
 }
 .groker__input-field .custom-date-button {
+  width: 10%;
   background: none;
 }
 
