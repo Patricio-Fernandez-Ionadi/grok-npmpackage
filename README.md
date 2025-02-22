@@ -280,16 +280,16 @@ function App() {
  - ```DateInput``` : Input de fecha con estilos predeterminados
 ```
 Props:
-| Nombre        | Tipo       | Requerido | Descripción                                      | Valor por Defecto |
-|---------------|------------|-----------|--------------------------------------------------|-------------------|
-| `label`       | `string`   | Si        | Texto que se muestra en el margen sup del comp.  | -                 |
-| `defaultValue`| `string`   | No        | Valor por defecto para el input.    (YYYY-MM-DD) | ""                |
-| `toShowValue` | `string`   | No        | Valor por defecto para mostrar.                  | ""                |
-| `ref`         | `ReactRef` | Si        | Referencia de React para control.                | "null"            |
-| `iconSize`    | `number`   | No        | Valor para icono de calendario (px).             | 30                |
-| `change`      | `function` | No        | Funcion que se ejecuta cuando cambia el valor.   | -                 |
-| `click`       | `function` | No        | Funcion que se ejecuta para abrir el input       | -                 |
-| `theme`       | `string`   | No        | ligh/dark para uso de colores.                   | "light"           |
+| Nombre         | Tipo       | Requerido | Descripción                                      | Valor por Defecto |
+|----------------|------------|-----------|--------------------------------------------------|-------------------|
+| `label`        | `string`   | Si        | Texto que se muestra en el margen sup del comp.  | -                 |
+| `defaultValue` | `string`   | No        | Valor por defecto para el input.    (YYYY-MM-DD) | ""                |
+| `toShowValue`  | `string`   | Si        | Valor por defecto para mostrar.                  | ""                |
+| `ref`          | `ReactRef` | Si        | Referencia de React para control.                | "null"            |
+| `iconSize`     | `number`   | No        | Valor para icono de calendario (px).             | 30                |
+| `onChangeEvent`| `function` | Si        | Funcion que se ejecuta cuando cambia el valor.   | -                 |
+| `onClickEvent` | `function` | No        | Funcion que se ejecuta para abrir el input       | -                 |
+| `theme`        | `string`   | No        | ligh/dark para uso de colores.                   | "light"           |
 ```
 
 ```javascript
@@ -298,25 +298,25 @@ import { TextInput } from 'groker/components';
 import { inputsFormat, calendarFormat } from 'groker/dates';
 
 function App() {
-  const dateRef = React.useRef(null)
-  const theme = 'light'
+  const myDateRef = React.useRef(null)
+  const [selectedDate, setSelectedDate] = React.useState(new Date())
 
-const fechaDefault = new Date() // <- YYYY-MM-DDThh:mm:ss.sssZ
-
-// Tambien podes usar el modulo de fechas para trabajar comodamente
-const fechaGrokerParaInput = inputsFormat(fechaDefault) // <- YYYY-MM-DD
+  const handleChangeEvent = e => {
+    setSelectedDate(e.target.value)
+    // o
+    setSelectedDate(myDateRef.current.value)
+    // cualquiera de las dos opciones da el mismo resultado
+  }
 
   return (
     <div>
      <DateInput
         label="Seleccionar Fecha"
-        defaultValue={fechaGrokerParaInput}
-        ref={dateRef}
-        change={() => console.log('la fecha se cambió!')}
-        click={() => console.log('Soy un calendario!')}
-        toShowValue={calendarFormat(fechaDefault)}  // <- formato en el que queramos mostrar la fecha DD/MM/YY
-        iconSize={iconSize}
-        theme={theme}
+        defaultValue={inputsFormat(selectedDate)}
+        ref={myDateRef}
+        onChangeEvent={handleChangeEvent}
+        onClickEvent={() => console.log('Soy un calendario!')}
+        toShowValue={calendarFormat(fechaDefault)}  // <- formato en el que queramos mostrar la fecha
       />
    </div>
   );
