@@ -1,4 +1,4 @@
-export const Exlamation_cicle = (props) => {
+export const Exclamation_circle = (props) => {
 	const {
 		strokeWidth = 1.5,
 		size = 200,
