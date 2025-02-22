@@ -1,50 +1,37 @@
 import React from 'react'
 import { Calendar } from '../../../icons'
-export const DateInput = React.forwardRef(function DateInput(props, ref) {
+export const DateInput = (props) => {
 	const {
 		label,
-		defaultValue = '',
 		onChangeEvent = () => {},
-		onClickEvent = () => {},
 		iconSize = 30,
-		toShowValue,
 		theme = 'light',
 		className = '',
 	} = props
 
+	const handleOpenPicker = () => {
+		const myInput = document.querySelector('.groker__date-input')
+		if (myInput && typeof myInput.showPicker === 'function') {
+			myInput.showPicker()
+		}
+	}
+
 	return (
 		<>
-			<label className={`groker__input-label ${theme}`}>{label}</label>
 			<div
-				className={`groker__input-field ${theme} custom-date-field ${className}`}
+				className={`groker__input-field ${theme} groker__date-field ${className}`}
 			>
+				<label className={`groker__input-label ${theme}`}>{label}</label>
 				<input
-					ref={ref}
 					type="date"
-					style={{
-						opacity: 0,
-						position: 'absolute',
-						zIndex: -1,
-					}}
-					defaultValue={defaultValue}
+					onClick={handleOpenPicker}
+					className="groker__date-input"
 					onChange={onChangeEvent}
-				/>
-				<input
-					type="text"
-					readOnly
-					value={toShowValue}
-					onClick={() => {
-						if (ref.current) ref.current.showPicker()
-						onClickEvent()
-					}}
-					className="custom-date-input"
+					aria-label="groker-date-input"
 				/>
 				<button
-					className="custom-date-button"
-					onClick={() => {
-						if (ref.current) ref.current.showPicker()
-						onClickEvent()
-					}}
+					className={`groker__date-button ${theme}`}
+					onClick={handleOpenPicker}
 					aria-label="Abrir selector de fecha"
 				>
 					<Calendar size={iconSize} />
@@ -52,4 +39,4 @@ export const DateInput = React.forwardRef(function DateInput(props, ref) {
 			</div>
 		</>
 	)
-})
+}

@@ -1,21 +1,6 @@
 @charset "UTF-8";
-.groker__input-label {
-  transition: background 0.2s ease;
-  position: absolute;
-  top: -8px;
-  left: 10px;
-  padding: 0 5px;
-  font-size: 14px;
-  font-weight: normal;
-}
-.groker__input-label.light {
-  background: #eee;
-}
-.groker__input-label.dark {
-  background: #373737;
-}
-
 .groker__input-field {
+  transition: background 0.2s ease;
   transition: color 0.2s ease;
   background: transparent;
   border: 1px solid #cecece;
@@ -24,6 +9,12 @@
   height: 100%;
   padding: 10px;
   outline: none;
+}
+.groker__input-field.light {
+  background: #fafafa;
+}
+.groker__input-field.dark {
+  background: #373737;
 }
 .groker__input-field.light {
   color: #212121;
@@ -37,32 +28,56 @@
 .groker__input-field.dark a {
   color: #eee;
 }
+.groker__input-field .groker__input-label {
+  transition: background 0.2s ease;
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  padding: 0 5px;
+  font-size: 14px;
+  font-weight: normal;
+}
+.groker__input-field .groker__input-label.light {
+  background: #fafafa;
+}
+.groker__input-field .groker__input-label.dark {
+  background: #373737;
+}
 .groker__input-field:focus {
   border-color: #007d85;
 }
 .groker__input-field.dark option {
   background: #373737;
 }
-.groker__input-field.custom-date-field {
+.groker__input-field.groker__date-field {
   display: flex;
   align-items: center;
+  position: relative;
 }
-.groker__input-field.custom-date-field .custom-date-input,
-.groker__input-field.custom-date-field .custom-date-button {
+.groker__input-field.groker__date-field .groker__date-input,
+.groker__input-field.groker__date-field .groker__date-button {
   color: inherit;
   cursor: pointer;
   height: 100%;
   border: none;
 }
-.groker__input-field.custom-date-field .custom-date-input {
-  background: transparent;
-  width: 90%;
+.groker__input-field.groker__date-field .groker__date-input {
+  width: 100%;
   font-size: inherit;
   outline: none;
-}
-.groker__input-field.custom-date-field .custom-date-button {
-  width: 10%;
   background: none;
+}
+.groker__input-field.groker__date-field .groker__date-button {
+  transition: background 0.2s ease;
+  width: 10%;
+  right: 0;
+  position: absolute;
+}
+.groker__input-field.groker__date-field .groker__date-button.light {
+  background: #fafafa;
+}
+.groker__input-field.groker__date-field .groker__date-button.dark {
+  background: #373737;
 }
 
 .groker__btn {

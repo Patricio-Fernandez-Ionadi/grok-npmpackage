@@ -1,14 +1,5 @@
-.groker__input-label {
-	@include useThemeBg($white, $black-light);
-	position: absolute;
-	top: -8px;
-	left: $gap;
-	padding: 0 5px;
-	font-size: $font-size-small;
-	font-weight: normal;
-}
-
 .groker__input-field {
+	@include useThemeBg($white_light, $black-light);
 	@include useThemeText($black, $white);
 	background: transparent;
 	border: 1px solid $white-dark;
@@ -17,6 +8,15 @@
 	height: 100%;
 	padding: $gap;
 	outline: none;
+	.groker__input-label {
+		@include useThemeBg($white_light, $black-light);
+		position: absolute;
+		top: -8px;
+		left: $gap;
+		padding: 0 5px;
+		font-size: $font-size-small;
+		font-weight: normal;
+	}
 
 	&:focus {
 		border-color: $primary;
@@ -26,27 +26,30 @@
 		background: $black-light;
 	}
 
-	&.custom-date-field {
+	&.groker__date-field {
 		display: flex;
 		align-items: center;
+		position: relative;
 
-		.custom-date-input,
-		.custom-date-button {
+		.groker__date-input,
+		.groker__date-button {
 			color: inherit;
 			cursor: pointer;
 			height: $full;
 			border: none;
 		}
 
-		.custom-date-input {
-			background: transparent;
-			width: 90%;
+		.groker__date-input {
+			width: 100%;
 			font-size: inherit;
 			outline: none;
-		}
-		.custom-date-button {
-			width: 10%;
 			background: none;
+		}
+		.groker__date-button {
+			@include useThemeBg($white_light, $black-light);
+			width: 10%;
+			right: 0;
+			position: absolute;
 		}
 	}
 }
