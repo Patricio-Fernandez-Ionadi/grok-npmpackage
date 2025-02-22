@@ -14,7 +14,7 @@ export const DateInput = React.forwardRef(function DateInput(props, ref) {
 	return (
 		<>
 			<label className={`groker__input-label ${theme}`}>{label}</label>
-			<div className={`groker__input-field ${theme}`}>
+			<div className={`groker__input-field ${theme} custom-date-field`}>
 				<input
 					ref={ref}
 					type="date"

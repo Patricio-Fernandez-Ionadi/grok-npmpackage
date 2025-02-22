@@ -10,7 +10,6 @@
 
 .groker__input-field {
 	@include useThemeText($black, $white);
-	width: 80%;
 	background: transparent;
 	border: 1px solid $white-dark;
 	border-radius: $border-radius;
@@ -27,22 +26,27 @@
 		background: $black-light;
 	}
 
-	.custom-date-input,
-	.custom-date-button {
-		color: inherit;
-		cursor: pointer;
-		height: $full;
-		border: none;
-	}
+	&.custom-date-field {
+		display: flex;
+		align-items: center;
 
-	.custom-date-input {
-		background: transparent;
-		width: 90%;
-		font-size: inherit;
-		outline: none;
-	}
-	.custom-date-button {
-		width: 10%;
-		background: none;
+		.custom-date-input,
+		.custom-date-button {
+			color: inherit;
+			cursor: pointer;
+			height: $full;
+			border: none;
+		}
+
+		.custom-date-input {
+			background: transparent;
+			width: 90%;
+			font-size: inherit;
+			outline: none;
+		}
+		.custom-date-button {
+			width: 10%;
+			background: none;
+		}
 	}
 }

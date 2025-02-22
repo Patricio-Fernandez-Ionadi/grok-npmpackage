@@ -17,7 +17,6 @@
 
 .groker__input-field {
   transition: color 0.2s ease;
-  width: 80%;
   background: transparent;
   border: 1px solid #cecece;
   border-radius: 3px;
@@ -44,20 +43,24 @@
 .groker__input-field.dark option {
   background: #373737;
 }
-.groker__input-field .custom-date-input,
-.groker__input-field .custom-date-button {
+.groker__input-field.custom-date-field {
+  display: flex;
+  align-items: center;
+}
+.groker__input-field.custom-date-field .custom-date-input,
+.groker__input-field.custom-date-field .custom-date-button {
   color: inherit;
   cursor: pointer;
   height: 100%;
   border: none;
 }
-.groker__input-field .custom-date-input {
+.groker__input-field.custom-date-field .custom-date-input {
   background: transparent;
   width: 90%;
   font-size: inherit;
   outline: none;
 }
-.groker__input-field .custom-date-button {
+.groker__input-field.custom-date-field .custom-date-button {
   width: 10%;
   background: none;
 }
