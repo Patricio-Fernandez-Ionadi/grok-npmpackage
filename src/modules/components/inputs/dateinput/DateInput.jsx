@@ -2,13 +2,13 @@ import React from 'react'
 import { Calendar } from '../../../icons'
 export const DateInput = React.forwardRef(function DateInput(props, ref) {
 	const {
-		theme,
+		label,
+		defaultValue = '',
 		change,
 		click,
-		iconSize,
-		defaultValue = '',
-		label,
+		iconSize = 30,
 		toShowValue,
+		theme,
 	} = props
 
 	return (
@@ -29,13 +29,19 @@ export const DateInput = React.forwardRef(function DateInput(props, ref) {
 				<input
 					type="text"
 					readOnly
-					value={toShowValue}
-					onClick={click}
+					value={toShowValue || defaultValue}
+					onClick={() => {
+						if (ref.current) ref.current.showPicker()
+						click()
+					}}
 					className="custom-date-input"
 				/>
 				<button
 					className="custom-date-button"
-					onClick={click}
+					onClick={() => {
+						if (ref.current) ref.current.showPicker()
+						click()
+					}}
 					aria-label="Abrir selector de fecha"
 				>
 					<Calendar size={iconSize} />
