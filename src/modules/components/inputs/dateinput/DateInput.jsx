@@ -8,7 +8,7 @@ export const DateInput = React.forwardRef(function DateInput(props, ref) {
 		click,
 		iconSize = 30,
 		toShowValue,
-		theme,
+		theme = 'light',
 	} = props
 
 	return (
