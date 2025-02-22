@@ -9,6 +9,8 @@
   height: 100%;
   padding: 10px;
   outline: none;
+  position: relative;
+  margin-top: 7px;
 }
 .groker__input-field.light {
   background: #fafafa;
@@ -43,7 +45,15 @@
 .groker__input-field .groker__input-label.dark {
   background: #373737;
 }
-.groker__input-field:focus {
+.groker__input-field .groker__input-element {
+  border: none;
+  width: 100%;
+  outline: none;
+  color: inherit;
+  background: none;
+  font-size: inherit;
+}
+.groker__input-field .groker__input-element:focus {
   border-color: #007d85;
 }
 .groker__input-field.dark option {

@@ -8,6 +8,9 @@
 	height: 100%;
 	padding: $gap;
 	outline: none;
+	position: relative;
+	margin-top: 7px; // distancia minima de margen para que el label no se superponga a otros elementos
+
 	.groker__input-label {
 		@include useThemeBg($white_light, $black-light);
 		position: absolute;
@@ -17,9 +20,16 @@
 		font-size: $font-size-small;
 		font-weight: normal;
 	}
-
-	&:focus {
-		border-color: $primary;
+	.groker__input-element {
+		border: none;
+		width: 100%;
+		outline: none;
+		color: inherit;
+		background: none;
+		font-size: inherit;
+		&:focus {
+			border-color: $primary;
+		}
 	}
 
 	&.dark option {

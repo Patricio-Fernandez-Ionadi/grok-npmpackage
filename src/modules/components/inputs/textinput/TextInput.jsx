@@ -11,18 +11,18 @@ export const TextInput = React.forwardRef(function TextInput(props, ref) {
 	} = props
 
 	return (
-		<>
+		<div className={`groker__input-field ${theme}`}>
 			<label className={`groker__input-label ${className} ${theme}`}>
 				{label}
 			</label>
 			<input
 				type={type}
-				className={`groker__input-field ${theme}`}
+				className={`groker__input-element ${theme}`}
 				name={name}
 				defaultValue={defaultValue}
 				ref={ref}
 				aria-labelledby={`${name ? name : 'input'}-field-label`}
 			/>
-		</>
+		</div>
 	)
 })
