@@ -1,6 +1,6 @@
 import React from 'react'
 import { Calendar } from '../../../icons'
-export const DateInput = (props) => {
+export const DateInput = React.forwardRef(function DateInput(props, ref) {
 	const {
 		label,
 		defaultValue = '',
@@ -11,14 +11,12 @@ export const DateInput = (props) => {
 		theme = 'light',
 	} = props
 
-	const thisGrokerDateInputRefference = React.useRef(null)
-
 	return (
 		<>
 			<label className={`groker__input-label ${theme}`}>{label}</label>
 			<div className={`groker__input-field ${theme} custom-date-field`}>
 				<input
-					ref={thisGrokerDateInputRefference}
+					ref={ref}
 					type="date"
 					style={{
 						opacity: 0,
@@ -33,7 +31,7 @@ export const DateInput = (props) => {
 					readOnly
 					value={toShowValue}
 					onClick={() => {
-						thisGrokerDateInputRefference.current.showPicker()
+						if (ref.current) ref.current.showPicker()
 						onClickEvent()
 					}}
 					className="custom-date-input"
@@ -41,7 +39,7 @@ export const DateInput = (props) => {
 				<button
 					className="custom-date-button"
 					onClick={() => {
-						thisGrokerDateInputRefference.current.showPicker()
+						if (ref.current) ref.current.showPicker()
 						onClickEvent()
 					}}
 					aria-label="Abrir selector de fecha"
@@ -51,4 +49,4 @@ export const DateInput = (props) => {
 			</div>
 		</>
 	)
-}
+})
