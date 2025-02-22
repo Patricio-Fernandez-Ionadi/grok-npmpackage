@@ -243,22 +243,21 @@ function App() {
    ![image](https://github.com/user-attachments/assets/b6793339-fb21-4520-b8ed-4f900fded3ef)
 ```
 Props:
-| Nombre        | Tipo       | Requerido | Descripción                                      | Valor por Defecto |
-|---------------|------------|-----------|--------------------------------------------------|-------------------|
-| `label`       | `string`   | Si        | Texto que se muestra en el margen sup del comp.  | -                 |
-| `defaultValue`| `string`   | No        | Valor por defecto a mostrar.                     | ""                |
-| `ref`         | `ReactRef` | Si        | Referencia de React para control.                | "null"            |
-| `type`        | `string`   | No        | Tipo de input text | number.                     | "text"            |
-| `name`        | `string`   | No        | Nombre para el input.                            | ""                |
-| `className`   | `string`   | No        | Clases de estilo customizables.                  | ""                |
-| `theme`       | `string`   | No        | ligh/dark para uso de colores.                   | "light"           |
+| Nombre         | Tipo       | Requerido | Descripción                                      | Valor por Defecto |
+|----------------|------------|-----------|--------------------------------------------------|-------------------|
+| `label`        | `string`   | Si        | Texto que se muestra en el margen sup del comp.  | -                 |
+| `defaultValue` | `string`   | No        | Valor por defecto a mostrar.                     | ""                |
+| `onChangeEvent`| `function` | Si        | Funcion que se ejecuta en el evento change.      | "void"            |
+| `type`         | `string`   | No        | Tipo de input text | number.                     | "text"            |
+| `name`         | `string`   | No        | Nombre para el input.                            | ""                |
+| `className`    | `string`   | No        | Clases de estilo customizables.                  | ""                |
+| `theme`        | `string`   | No        | ligh/dark para uso de colores.                   | "light"           |
 ```
 ```javascript
 import React from 'react'
 import { TextInput } from 'groker/components';
 
 function App() {
-  const nameRef = React.useRef(null)
   const theme = 'light'
 
   return (
@@ -267,8 +266,8 @@ function App() {
         label="Nombre"
         defaultValue={'Un Input de Texto'}
         name="name"
-        ref={nameRef}
         theme={theme}
+        onChangeEvent={myCustomHandler}
      />
    </div>
   );
@@ -283,12 +282,8 @@ Props:
 | Nombre         | Tipo       | Requerido | Descripción                                      | Valor por Defecto |
 |----------------|------------|-----------|--------------------------------------------------|-------------------|
 | `label`        | `string`   | Si        | Texto que se muestra en el margen sup del comp.  | -                 |
-| `defaultValue` | `string`   | No        | Valor por defecto para el input.    (YYYY-MM-DD) | ""                |
-| `toShowValue`  | `string`   | Si        | Valor por defecto para mostrar.                  | ""                |
-| `ref`          | `ReactRef` | Si        | Referencia de React para control.                | "null"            |
 | `iconSize`     | `number`   | No        | Valor para icono de calendario (px).             | 30                |
 | `onChangeEvent`| `function` | Si        | Funcion que se ejecuta cuando cambia el valor.   | -                 |
-| `onClickEvent` | `function` | No        | Funcion que se ejecuta para abrir el input       | -                 |
 | `theme`        | `string`   | No        | ligh/dark para uso de colores.                   | "light"           |
 ```
 
@@ -298,25 +293,17 @@ import { TextInput } from 'groker/components';
 import { inputsFormat, calendarFormat } from 'groker/dates';
 
 function App() {
-  const myDateRef = React.useRef(null)
   const [selectedDate, setSelectedDate] = React.useState(new Date())
 
   const handleChangeEvent = e => {
     setSelectedDate(e.target.value)
-    // o
-    setSelectedDate(myDateRef.current.value)
-    // cualquiera de las dos opciones da el mismo resultado
   }
 
   return (
     <div>
      <DateInput
         label="Seleccionar Fecha"
-        defaultValue={inputsFormat(selectedDate)}
-        ref={myDateRef}
         onChangeEvent={handleChangeEvent}
-        onClickEvent={() => console.log('Soy un calendario!')}
-        toShowValue={calendarFormat(fechaDefault)}  // <- formato en el que queramos mostrar la fecha
       />
    </div>
   );
