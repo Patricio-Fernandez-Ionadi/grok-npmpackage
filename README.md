@@ -328,6 +328,7 @@ function App() {
 - ```calendarFormat()```: param String (algun formato de fecha) returns ```DD/MM/YY```
 - ```inputsFormat()```: param String (algun formato de fecha) returns ```YYYY-MM-DD```
 - ```isoFormat()```: param String (algun formato de fecha) returns ```YYYY-MM-DDThh:mm:ss.sssZ```
+- ```today```: returns ```YYYY-MM-DD```
 <a name="iconos"></a>
 ### Iconos (```groker/icons```)
  - Arrow_left
