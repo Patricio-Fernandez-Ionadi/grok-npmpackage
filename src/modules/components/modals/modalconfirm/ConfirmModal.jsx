@@ -2,18 +2,19 @@ import React from 'react'
 import { Button } from '../../button/Button'
 
 export function ConfirmModal({
-	isOpen,
+	isOpen = false,
 	onClose,
 	onConfirm,
-	message,
+	message = '',
 	theme = 'light',
+	className = '',
 }) {
 	if (!isOpen) return null
 
 	return (
 		<div className="modal-overlay" onClick={onClose}>
 			<div
-				className={`modal-content ${theme}`}
+				className={`modal-content ${theme} ${className}`}
 				onClick={(e) => e.stopPropagation()}
 			>
 				<p>{message}</p>
