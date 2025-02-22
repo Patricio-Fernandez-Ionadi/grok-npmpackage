@@ -4,8 +4,8 @@ export const DateInput = React.forwardRef(function DateInput(props, ref) {
 	const {
 		label,
 		defaultValue = '',
-		change,
-		click,
+		change = () => {},
+		click = () => {},
 		iconSize = 30,
 		toShowValue,
 		theme = 'light',
