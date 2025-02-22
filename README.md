@@ -4,6 +4,15 @@ Groker es una biblioteca de componentes reutilizables para React que incluye íc
 otros módulos útiles. Está diseñada para ser modular y fácil de integrar en proyectos modernos.
  - [Uso](#ejemplos-de-uso)
  - [Componentes](#componentes)
+   - [ToggleSwitch](#comp-toggle)
+   - [Button](#comp-btn)
+   - [ConfirmModal](#comp-confMod)
+   - [AlertModal](#comp-alMod)
+   - [TextInput](#comp-TI)
+   - [DateInput](#comp-DI)
+ - [Funciones](#funciones)
+ - [Iconos](#iconos)
+ - [Como contribuir](#contribucion)
 
 ## Instalación
 Para instalar Groker, ejecuta el siguiente comando:
@@ -72,6 +81,7 @@ root.render(<App />);
 
 <a name="componentes"></a>
 ### Componentes (```groker/components```)
+<a name="comp-toggle"></a>
  - ```ToggleSwitch``` : Un interruptor de on/off.
   ![image](https://github.com/user-attachments/assets/f664518c-3732-4aa3-864b-6c42a23ec35d) ![image](https://github.com/user-attachments/assets/3961b0df-93a3-4a78-9251-3c22e5fdf750)
    
@@ -84,7 +94,7 @@ Props:
 | `name`      | `string`   | No        | Nombre del input type checkbox.                  | ""                |
 ```
 --------------
-
+<a name="comp-btn"></a>
  - ```Button``` : Boton reutilizable con estilos predeterminados
 ```
 Props:
@@ -118,7 +128,7 @@ function App() {
 }
 ```
 --------------
-   
+   <a name="comp-confMod"></a>
  - ```ConfirmModal``` : Ventana modal que permite confirmar o rechazar.
    ![image](https://github.com/user-attachments/assets/b33f7583-3fee-4d06-a132-b0f249f93b5e)
 ```
@@ -170,7 +180,7 @@ function App() {
 ```
 
 --------------
-
+<a name="comp-alMod"></a>
  - ```AlertModal``` : Ventana modal informativa solo permite confirmar.
    ![image](https://github.com/user-attachments/assets/92e3e535-4adc-44c9-b53f-9c7f64514891)
 ```
@@ -215,6 +225,7 @@ function App() {
 ```
 
 --------------
+<a name="comp-TI"></a>
  - ```TextInput``` : Input de texto con estilos predeterminados 
    ![image](https://github.com/user-attachments/assets/b6793339-fb21-4520-b8ed-4f900fded3ef)
 ```
@@ -252,6 +263,7 @@ function App() {
 ```
 
 --------------
+<a name="comp-DI"></a>
  - ```DateInput``` : Input de fecha con estilos predeterminados
 ```
 Props:
@@ -298,12 +310,12 @@ const fechaGrokerParaInput = inputsFormat(fechaDefault) // <- YYYY-MM-DD
 }
 ```
 --------------
-
+<a name="funciones"></a>
 ### Funciones (```groker/date```)
 - ```calendarFormat()```: param String (algun formato de fecha) returns ```DD/MM/YY```
 - ```inputsFormat()```: param String (algun formato de fecha) returns ```YYYY-MM-DD```
 - ```isoFormat()```: param String (algun formato de fecha) returns ```YYYY-MM-DDThh:mm:ss.sssZ```
-
+<a name="iconos"></a>
 ### Iconos (```groker/icons```)
  - Arrow_left
  - Calendar
@@ -316,7 +328,7 @@ const fechaGrokerParaInput = inputsFormat(fechaDefault) // <- YYYY-MM-DD
  - Ellipsis_vertical
  - Exclamation_circle
  - Eye
-
+<a name="contribucion"></a>
 ## Contribuciones
 Si deseas contribuir al desarrollo de Groker, sigue estos pasos:
  1. Clona el repositorio:
