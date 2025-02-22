@@ -93,6 +93,19 @@ Props:
 | `onEvent`   | `function` | No        | Función que se ejecuta cuando cambia el estado.  | -                 |
 | `name`      | `string`   | No        | Nombre del input type checkbox.                  | ""                |
 ```
+```javascript
+import { ToggleSwitch } from 'groker/components';
+
+function App() {
+  const [isTrue, setIsTrue] = React.useState(false)
+
+  return (
+    <div>
+      <ToggleSwitch onEvent={() => console.log(`switched to ${isTrue}`)} switcher={isTrue}> name="my toggle switch" />
+    </div>
+  );
+}
+```
 --------------
 <a name="comp-btn"></a>
  - ```Button``` : Boton reutilizable con estilos predeterminados
