@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const TextInput = React.forwardRef(function TextInput(props, ref) {
+export const TextInput = (props) => {
 	const {
 		label,
 		defaultValue = '',
@@ -8,21 +8,20 @@ export const TextInput = React.forwardRef(function TextInput(props, ref) {
 		type = 'text',
 		className = '',
 		theme = 'light',
+		onChangeEvent,
 	} = props
 
 	return (
-		<div className={`groker__input-field ${theme}`}>
-			<label className={`groker__input-label ${className} ${theme}`}>
-				{label}
-			</label>
+		<div className={`groker__input-field ${theme} ${className}`}>
+			<label className={`groker__input-label ${theme}`}>{label}</label>
 			<input
 				type={type}
 				className={`groker__input-element ${theme}`}
 				name={name}
 				defaultValue={defaultValue}
-				ref={ref}
 				aria-labelledby={`${name ? name : 'input'}-field-label`}
+				onChange={onChangeEvent}
 			/>
 		</div>
 	)
-})
+}

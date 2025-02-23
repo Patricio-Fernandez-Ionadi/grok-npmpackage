@@ -1,6 +1,7 @@
 // inputs
 export { TextInput } from './inputs/textinput/TextInput.jsx'
 export { DateInput } from './inputs/dateinput/DateInput.jsx'
+export { Selector } from './inputs/selector/Selector.jsx'
 
 // buttons
 export { Button } from './button/Button.jsx'

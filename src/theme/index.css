@@ -8,9 +8,10 @@
   font-size: 16px;
   height: 100%;
   padding: 10px;
+  width: 100%;
+  max-width: 1280px;
   outline: none;
   position: relative;
-  margin-top: 7px;
 }
 .groker__input-field.light {
   background: #fafafa;
@@ -50,7 +51,7 @@
   width: 100%;
   outline: none;
   color: inherit;
-  background: none;
+  background: inherit;
   font-size: inherit;
 }
 .groker__input-field .groker__input-element:focus {
