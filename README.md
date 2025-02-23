@@ -10,6 +10,7 @@ otros módulos útiles. Está diseñada para ser modular y fácil de integrar en
    - [AlertModal](#comp-alMod)
    - [TextInput](#comp-TI)
    - [DateInput](#comp-DI)
+   - [Selector](#comp-selector)
  - [Funciones](#funciones)
  - [Iconos](#iconos)
  - [Como contribuir](#contribucion)
@@ -281,9 +282,10 @@ function App() {
 Props:
 | Nombre         | Tipo       | Requerido | Descripción                                      | Valor por Defecto |
 |----------------|------------|-----------|--------------------------------------------------|-------------------|
-| `label`        | `string`   | Si        | Texto que se muestra en el margen sup del comp.  | -                 |
-| `iconSize`     | `number`   | No        | Valor para icono de calendario (px).             | 30                |
 | `onChangeEvent`| `function` | Si        | Funcion que se ejecuta cuando cambia el valor.   | -                 |
+| `label`        | `string`   | No        | Texto que se muestra en el margen sup del comp.  | -                 |
+| `iconSize`     | `number`   | No        | Valor para icono de calendario (px).             | 30                |
+| `className`    | `string`   | No        | Clases de estilo customizables.                  | ""                |
 | `theme`        | `string`   | No        | ligh/dark para uso de colores.                   | "light"           |
 ```
 
@@ -304,6 +306,43 @@ function App() {
      <DateInput
         label="Seleccionar Fecha"
         onChangeEvent={handleChangeEvent}
+      />
+   </div>
+  );
+}
+```
+--------------
+<a name="comp-selector"></a>
+ - ```Selector``` : Selector de opciones con estilos predeterminados
+```
+Props:
+| Nombre         | Tipo       | Requerido | Descripción                                      | Valor por Defecto |
+|----------------|------------|-----------|--------------------------------------------------|-------------------|
+| `list`         | `array`    | Si        | Array de string|number que se mostraran listadas | -                 |
+| `onChangeEvent`| `function` | No        | Funcion que se ejecuta cuando cambia el valor.   | -                 |
+| `defaultValue` | `string`   | No        | Valor por defecto seleccionado.                  | ""                |
+| `label`        | `string`   | No        | Texto que se muestra en el margen sup del comp.  | ""                |
+| `className`    | `string`   | No        | Clases de estilo customizables.                  | ""                |
+| `theme`        | `string`   | No        | ligh/dark para uso de colores.                   | "light"           |
+```
+
+```javascript
+import React from 'react'
+import { Selector } from 'groker/components';
+
+function App() {
+
+  // lista con strings, numeros o un mix ✔️
+  const listaValida = ['opcion 1', 'otra opcion', 3, 8, 'flores']
+
+  // lista con valores invalidos ❌
+  const listaInvalida = [ {}, [], 'no va a listarse', () => {} ]
+
+  return (
+    <div>
+     <Selector
+        onChangeEvent={() => {...}}
+        list={listaValida}
       />
    </div>
   );
