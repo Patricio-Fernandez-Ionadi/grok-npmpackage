@@ -7,6 +7,7 @@ export const DateInput = (props) => {
 		iconSize = 30,
 		theme = 'light',
 		className = '',
+		defaultValue = '',
 	} = props
 
 	const handleOpenPicker = () => {
@@ -28,6 +29,7 @@ export const DateInput = (props) => {
 					className="groker__date-input"
 					onChange={onChangeEvent}
 					aria-label="groker-date-input"
+					defaultValue={defaultValue}
 				/>
 				<button
 					className={`groker__date-button ${theme}`}

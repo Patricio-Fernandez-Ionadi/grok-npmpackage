@@ -49,6 +49,7 @@
 .groker__input-field .groker__input-element {
   border: none;
   width: 100%;
+  height: 100%;
   outline: none;
   color: inherit;
   background: inherit;
@@ -219,4 +220,10 @@
 }
 .modal-overlay .modal-content .modal-actions .cancel-button:hover {
   background-color: #f44336;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }/*# sourceMappingURL=index.css.map */
