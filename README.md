@@ -10,6 +10,7 @@ otros módulos útiles. Está diseñada para ser modular y fácil de integrar en
    - [AlertModal](#comp-alMod)
    - [TextInput](#comp-TI)
    - [DateInput](#comp-DI)
+   - [Selector](#comp-selector)
  - [Funciones](#funciones)
  - [Iconos](#iconos)
  - [Como contribuir](#contribucion)
@@ -243,22 +244,21 @@ function App() {
    ![image](https://github.com/user-attachments/assets/b6793339-fb21-4520-b8ed-4f900fded3ef)
 ```
 Props:
-| Nombre        | Tipo       | Requerido | Descripción                                      | Valor por Defecto |
-|---------------|------------|-----------|--------------------------------------------------|-------------------|
-| `label`       | `string`   | Si        | Texto que se muestra en el margen sup del comp.  | -                 |
-| `defaultValue`| `string`   | No        | Valor por defecto a mostrar.                     | ""                |
-| `ref`         | `ReactRef` | Si        | Referencia de React para control.                | "null"            |
-| `type`        | `string`   | No        | Tipo de input text | number.                     | "text"            |
-| `name`        | `string`   | No        | Nombre para el input.                            | ""                |
-| `className`   | `string`   | No        | Clases de estilo customizables.                  | ""                |
-| `theme`       | `string`   | No        | ligh/dark para uso de colores.                   | "light"           |
+| Nombre         | Tipo       | Requerido | Descripción                                      | Valor por Defecto |
+|----------------|------------|-----------|--------------------------------------------------|-------------------|
+| `label`        | `string`   | Si        | Texto que se muestra en el margen sup del comp.  | -                 |
+| `defaultValue` | `string`   | No        | Valor por defecto a mostrar.                     | ""                |
+| `onChangeEvent`| `function` | Si        | Funcion que se ejecuta en el evento change.      | "void"            |
+| `type`         | `string`   | No        | Tipo de input text | number.                     | "text"            |
+| `name`         | `string`   | No        | Nombre para el input.                            | ""                |
+| `className`    | `string`   | No        | Clases de estilo customizables.                  | ""                |
+| `theme`        | `string`   | No        | ligh/dark para uso de colores.                   | "light"           |
 ```
 ```javascript
 import React from 'react'
 import { TextInput } from 'groker/components';
 
 function App() {
-  const nameRef = React.useRef(null)
   const theme = 'light'
 
   return (
@@ -267,8 +267,8 @@ function App() {
         label="Nombre"
         defaultValue={'Un Input de Texto'}
         name="name"
-        ref={nameRef}
         theme={theme}
+        onChangeEvent={myCustomHandler}
      />
    </div>
   );
@@ -280,16 +280,13 @@ function App() {
  - ```DateInput``` : Input de fecha con estilos predeterminados
 ```
 Props:
-| Nombre        | Tipo       | Requerido | Descripción                                      | Valor por Defecto |
-|---------------|------------|-----------|--------------------------------------------------|-------------------|
-| `label`       | `string`   | Si        | Texto que se muestra en el margen sup del comp.  | -                 |
-| `defaultValue`| `string`   | No        | Valor por defecto para el input.    (YYYY-MM-DD) | ""                |
-| `toShowValue` | `string`   | No        | Valor por defecto para mostrar.                  | ""                |
-| `ref`         | `ReactRef` | Si        | Referencia de React para control.                | "null"            |
-| `iconSize`    | `number`   | No        | Valor para icono de calendario (px).             | 30                |
-| `change`      | `function` | No        | Funcion que se ejecuta cuando cambia el valor.   | -                 |
-| `click`       | `function` | No        | Funcion que se ejecuta para abrir el input       | -                 |
-| `theme`       | `string`   | No        | ligh/dark para uso de colores.                   | "light"           |
+| Nombre         | Tipo       | Requerido | Descripción                                      | Valor por Defecto |
+|----------------|------------|-----------|--------------------------------------------------|-------------------|
+| `onChangeEvent`| `function` | Si        | Funcion que se ejecuta cuando cambia el valor.   | -                 |
+| `label`        | `string`   | No        | Texto que se muestra en el margen sup del comp.  | -                 |
+| `iconSize`     | `number`   | No        | Valor para icono de calendario (px).             | 30                |
+| `className`    | `string`   | No        | Clases de estilo customizables.                  | ""                |
+| `theme`        | `string`   | No        | ligh/dark para uso de colores.                   | "light"           |
 ```
 
 ```javascript
@@ -298,25 +295,54 @@ import { TextInput } from 'groker/components';
 import { inputsFormat, calendarFormat } from 'groker/dates';
 
 function App() {
-  const dateRef = React.useRef(null)
-  const theme = 'light'
+  const [selectedDate, setSelectedDate] = React.useState(new Date())
 
-const fechaDefault = new Date() // <- YYYY-MM-DDThh:mm:ss.sssZ
-
-// Tambien podes usar el modulo de fechas para trabajar comodamente
-const fechaGrokerParaInput = inputsFormat(fechaDefault) // <- YYYY-MM-DD
+  const handleChangeEvent = e => {
+    setSelectedDate(e.target.value)
+  }
 
   return (
     <div>
      <DateInput
         label="Seleccionar Fecha"
-        defaultValue={fechaGrokerParaInput}
-        ref={dateRef}
-        change={() => console.log('la fecha se cambió!')}
-        click={() => console.log('Soy un calendario!')}
-        toShowValue={calendarFormat(fechaDefault)}  // <- formato en el que queramos mostrar la fecha DD/MM/YY
-        iconSize={iconSize}
-        theme={theme}
+        onChangeEvent={handleChangeEvent}
+      />
+   </div>
+  );
+}
+```
+--------------
+<a name="comp-selector"></a>
+ - ```Selector``` : Selector de opciones con estilos predeterminados
+```
+Props:
+| Nombre         | Tipo       | Requerido | Descripción                                      | Valor por Defecto |
+|----------------|------------|-----------|--------------------------------------------------|-------------------|
+| `list`         | `array`    | Si        | Array de string|number que se mostraran listadas | -                 |
+| `onChangeEvent`| `function` | No        | Funcion que se ejecuta cuando cambia el valor.   | -                 |
+| `defaultValue` | `string`   | No        | Valor por defecto seleccionado.                  | ""                |
+| `label`        | `string`   | No        | Texto que se muestra en el margen sup del comp.  | ""                |
+| `className`    | `string`   | No        | Clases de estilo customizables.                  | ""                |
+| `theme`        | `string`   | No        | ligh/dark para uso de colores.                   | "light"           |
+```
+
+```javascript
+import React from 'react'
+import { Selector } from 'groker/components';
+
+function App() {
+
+  // lista con strings, numeros o un mix ✔️
+  const listaValida = ['opcion 1', 'otra opcion', 3, 8, 'flores']
+
+  // lista con valores invalidos ❌
+  const listaInvalida = [ {}, [], 'no va a listarse', () => {} ]
+
+  return (
+    <div>
+     <Selector
+        onChangeEvent={() => {...}}
+        list={listaValida}
       />
    </div>
   );
@@ -328,6 +354,7 @@ const fechaGrokerParaInput = inputsFormat(fechaDefault) // <- YYYY-MM-DD
 - ```calendarFormat()```: param String (algun formato de fecha) returns ```DD/MM/YY```
 - ```inputsFormat()```: param String (algun formato de fecha) returns ```YYYY-MM-DD```
 - ```isoFormat()```: param String (algun formato de fecha) returns ```YYYY-MM-DDThh:mm:ss.sssZ```
+- ```today```: returns ```YYYY-MM-DD```
 <a name="iconos"></a>
 ### Iconos (```groker/icons```)
  - Arrow_left
