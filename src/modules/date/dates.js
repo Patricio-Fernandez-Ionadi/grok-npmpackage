@@ -47,3 +47,12 @@ export const isoFormat = (dateString) => {
 	if (!dateString) return ''
 	return new Date(dateString).toISOString()
 }
+
+export const weeksUntil = (endDate) => {
+	const start = new Date()
+	const end = new Date(endDate)
+	const diffInMs = end - start // Diferencia en milisegundos
+	const msInWeek = 1000 * 60 * 60 * 24 * 7 // Milisegundos en una semana
+	const weeks = diffInMs / msInWeek
+	return Math.round(weeks) // Redondea para obtener semanas completas
+}

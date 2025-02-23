@@ -12,3 +12,5 @@ export { ToggleSwitch } from './toggleswitch/ToggleSwitch.jsx'
 // modals
 export { AlertModal } from './modals/modalalert/AlertModal.jsx'
 export { ConfirmModal } from './modals/modalconfirm/ConfirmModal.jsx'
+
+export * from './utils/elements.js'
