@@ -9,6 +9,7 @@ export const TextInput = (props) => {
 		className = '',
 		theme = 'light',
 		onChangeEvent,
+		placeHolder = '',
 	} = props
 
 	return (
@@ -21,6 +22,7 @@ export const TextInput = (props) => {
 				defaultValue={defaultValue}
 				aria-labelledby={`${name ? name : 'input'}-field-label`}
 				onChange={onChangeEvent}
+				placeholder={placeHolder}
 			/>
 		</div>
 	)
