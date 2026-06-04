@@ -404,9 +404,8 @@ function App() {
 
 <a name="comp-spinner"></a>
 
-- `Spinner` : Indicador de carga animado
-  ![image](https://github.com/user-attachments/assets/cc53ca8f-d14a-45bd-a439-1c1ca4402170)
-  
+- `Spinner` : Indicador de carga animado.
+![image](https://github.com/user-attachments/assets/cc53ca8f-d14a-45bd-a439-1c1ca4402170)
 
 ```
 Props:
