@@ -5,3 +5,5 @@ src/test/*
 src/View.jsx
 index.html
 dist
+storybook-static
+package-lock.json
