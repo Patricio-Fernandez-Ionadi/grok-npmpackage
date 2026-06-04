@@ -800,7 +800,7 @@ function App() {
 - Calendar
 - Chevron_left
 - Chevron_right
-- Cloud_arrou_up
+- Cloud_arrow_up
 - DarkMode
 - LightMode
 - Edit_icon

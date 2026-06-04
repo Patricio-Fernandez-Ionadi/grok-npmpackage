@@ -4,3 +4,4 @@ src/modules/components/inputs/dateinput/DateInput.test.jsx
 src/test/*
 src/View.jsx
 index.html
+dist
