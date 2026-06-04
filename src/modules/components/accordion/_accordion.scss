@@ -41,12 +41,21 @@
 }
 
 .groker__accordion-body {
-  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
 
   &--open {
+    animation: groker-accordion-slide 0.25s ease;
+  }
+}
+
+@keyframes groker-accordion-slide {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
     max-height: 500px;
+    opacity: 1;
   }
 }
 

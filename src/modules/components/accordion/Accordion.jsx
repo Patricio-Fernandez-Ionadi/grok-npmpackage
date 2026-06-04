@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState } from 'react'
 
 export const Accordion = ({
   items,
@@ -7,7 +7,6 @@ export const Accordion = ({
   className = '',
 }) => {
   const [openIndexes, setOpenIndexes] = useState([])
-  const contentRefs = useRef({})
 
   const toggle = (index) => {
     if (allowMultiple) {
@@ -18,15 +17,6 @@ export const Accordion = ({
       setOpenIndexes((prev) => (prev.includes(index) ? [] : [index]))
     }
   }
-
-  useEffect(() => {
-    openIndexes.forEach((index) => {
-      const el = contentRefs.current[index]
-      if (el) {
-        el.style.maxHeight = `${el.scrollHeight}px`
-      }
-    })
-  }, [openIndexes])
 
   return (
     <div className={`groker__accordion ${theme} ${className}`}>
@@ -42,13 +32,11 @@ export const Accordion = ({
               <span>{item.title}</span>
               <span className="groker__accordion-icon">{isOpen ? '−' : '+'}</span>
             </button>
-            <div
-              ref={(el) => (contentRefs.current[index] = el)}
-              className={`groker__accordion-body ${isOpen ? 'groker__accordion-body--open' : ''}`}
-              style={{ maxHeight: isOpen ? `${contentRefs.current[index]?.scrollHeight || 0}px` : '0px' }}
-            >
-              <div className="groker__accordion-content">{item.content}</div>
-            </div>
+            {isOpen && (
+              <div className="groker__accordion-body groker__accordion-body--open">
+                <div className="groker__accordion-content">{item.content}</div>
+              </div>
+            )}
           </div>
         )
       })}

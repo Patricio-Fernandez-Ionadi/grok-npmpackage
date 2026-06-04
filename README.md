@@ -12,6 +12,17 @@ otros módulos útiles. Está diseñada para ser modular y fácil de integrar en
   - [TextInput](#comp-TI)
   - [DateInput](#comp-DI)
   - [Selector](#comp-selector)
+  - [Spinner](#comp-spinner)
+  - [Tooltip](#comp-tooltip)
+  - [Badge](#comp-badge)
+  - [Dropdown](#comp-dropdown)
+  - [Pagination](#comp-pagination)
+  - [Accordion](#comp-accordion)
+  - [RadioGroup](#comp-radiogroup)
+  - [Checkbox](#comp-checkbox)
+  - [Textarea](#comp-textarea)
+  - [Avatar](#comp-avatar)
+  - [ProgressBar](#comp-progressbar)
 - [Funciones](#funciones)
 - [Iconos](#iconos)
 - [Como contribuir](#contribucion)
@@ -384,6 +395,410 @@ function App() {
       />
    </div>
   );
+}
+```
+
+---
+
+<!-- ########## NUEVOS COMPONENTES ########## -->
+
+<a name="comp-spinner"></a>
+
+- `Spinner` : Indicador de carga animado
+  <!-- IMAGEN: subir screenshot del Spinner y reemplazar este comentario por:
+  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
+  -->
+
+```
+Props:
+| Nombre      | Tipo       | Requerido | Descripción                                      | Valor por Defecto |
+|-------------|------------|-----------|--------------------------------------------------|-------------------|
+| `size`      | `number`   | No        | Tamaño del spinner en píxeles.                   | 40                |
+| `theme`     | `string`   | No        | light/dark para uso de colores.                  | "light"           |
+| `className` | `string`   | No        | Clases de estilo personalizables.                | ""                |
+```
+
+```javascript
+import { Spinner } from 'groker/components'
+
+function App() {
+  return (
+    <div>
+      <Spinner size={30} />
+      <Spinner size={50} />
+    </div>
+  )
+}
+```
+
+---
+
+<a name="comp-tooltip"></a>
+
+- `Tooltip` : Tooltip que muestra información al hacer hover
+  <!-- IMAGEN: subir screenshot del Tooltip y reemplazar este comentario por:
+  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
+  -->
+
+```
+Props:
+| Nombre      | Tipo       | Requerido | Descripción                                      | Valor por Defecto |
+|-------------|------------|-----------|--------------------------------------------------|-------------------|
+| `content`   | `string`   | Si        | Texto a mostrar en el tooltip.                   | -                 |
+| `position`  | `string`   | No        | Posición: top/bottom/left/right.                 | "top"             |
+| `delay`     | `number`   | No        | Milisegundos de retardo al hacer hover.          | 200               |
+| `theme`     | `string`   | No        | light/dark para uso de colores.                  | "light"           |
+| `className` | `string`   | No        | Clases de estilo personalizables.                | ""                |
+```
+
+```javascript
+import { Tooltip, Button } from 'groker/components'
+
+function App() {
+  return (
+    <div>
+      <Tooltip content="Esto es un tooltip" position="top">
+        <Button>Hover top</Button>
+      </Tooltip>
+      <Tooltip content="Tooltip abajo" position="bottom">
+        <Button>Hover bottom</Button>
+      </Tooltip>
+    </div>
+  )
+}
+```
+
+---
+
+<a name="comp-badge"></a>
+
+- `Badge` : Etiqueta o insignia con variantes de color. Si se pasa `onClick`, se renderiza como botón clickeable.
+  <!-- IMAGEN: subir screenshot del Badge y reemplazar este comentario por:
+  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
+  -->
+
+```
+Props:
+| Nombre      | Tipo         | Requerido | Descripción                                      | Valor por Defecto |
+|-------------|--------------|-----------|--------------------------------------------------|-------------------|
+| `children`  | `ReactNode`  | Si        | Contenido del badge.                             | -                 |
+| `variant`   | `string`     | No        | Variante: default/success/warning/error/info.    | "default"         |
+| `size`      | `string`     | No        | Tamaño: sm/md/lg.                                | "md"              |
+| `onClick`   | `function`   | No        | Si se pasa, el badge se vuelve clickeable.       | -                 |
+| `theme`     | `string`     | No        | light/dark para uso de colores.                  | "light"           |
+| `className` | `string`     | No        | Clases de estilo personalizables.                | ""                |
+```
+
+```javascript
+import { Badge } from 'groker/components'
+
+function App() {
+  return (
+    <div>
+      <Badge>default</Badge>
+      <Badge variant="success">success</Badge>
+      <Badge variant="warning">warning</Badge>
+      <Badge variant="error" onClick={() => alert('click')}>clickeable</Badge>
+      <Badge variant="info">info</Badge>
+      <Badge size="sm">small</Badge>
+      <Badge size="lg">large</Badge>
+    </div>
+  )
+}
+```
+
+---
+
+<a name="comp-dropdown"></a>
+
+- `Dropdown` : Menú desplegable con click outside para cerrar
+  <!-- IMAGEN: subir screenshot del Dropdown abierto y reemplazar este comentario por:
+  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
+  -->
+
+```
+Props:
+| Nombre      | Tipo         | Requerido | Descripción                                      | Valor por Defecto |
+|-------------|--------------|-----------|--------------------------------------------------|-------------------|
+| `trigger`   | `ReactNode`  | Si        | Elemento que activa el dropdown al hacer click.  | -                 |
+| `children`  | `ReactNode`  | Si        | Contenido del menú desplegable.                  | -                 |
+| `align`     | `string`     | No        | Alineación: left/right.                          | "left"            |
+| `theme`     | `string`     | No        | light/dark para uso de colores.                  | "light"           |
+| `className` | `string`     | No        | Clases de estilo personalizables.                | ""                |
+```
+
+```javascript
+import { Dropdown, Button } from 'groker/components'
+
+function App() {
+  return (
+    <Dropdown
+      trigger={<Button>Abrir Dropdown</Button>}
+      align="left"
+    >
+      <div style={{ padding: 8 }}>Opción 1</div>
+      <div style={{ padding: 8 }}>Opción 2</div>
+      <div style={{ padding: 8 }}>Opción 3</div>
+    </Dropdown>
+  )
+}
+```
+
+---
+
+<a name="comp-pagination"></a>
+
+- `Pagination` : Navegación de páginas
+  <!-- IMAGEN: subir screenshot de la Paginación y reemplazar este comentario por:
+  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
+  -->
+
+```
+Props:
+| Nombre         | Tipo         | Requerido | Descripción                                      | Valor por Defecto |
+|----------------|--------------|-----------|--------------------------------------------------|-------------------|
+| `currentPage`  | `number`     | Si        | Página actual.                                   | -                 |
+| `totalPages`   | `number`     | Si        | Número total de páginas.                         | -                 |
+| `onPageChange` | `function`   | Si        | Función que se ejecuta al cambiar de página.     | -                 |
+| `theme`        | `string`     | No        | light/dark para uso de colores.                  | "light"           |
+| `className`    | `string`     | No        | Clases de estilo personalizables.                | ""                |
+```
+
+```javascript
+import { Pagination } from 'groker/components'
+
+function App() {
+  const [page, setPage] = React.useState(1)
+
+  return (
+    <Pagination
+      currentPage={page}
+      totalPages={5}
+      onPageChange={setPage}
+    />
+  )
+}
+```
+
+---
+
+<a name="comp-accordion"></a>
+
+- `Accordion` : Panel de secciones expandibles
+  <!-- IMAGEN: subir screenshot del Accordion abierto y reemplazar este comentario por:
+  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
+  -->
+
+```
+Props:
+| Nombre          | Tipo         | Requerido | Descripción                                      | Valor por Defecto |
+|-----------------|--------------|-----------|--------------------------------------------------|-------------------|
+| `items`         | `array`      | Si        | Array de objetos { title, content }.             | -                 |
+| `allowMultiple` | `boolean`    | No        | Permite abrir varias secciones a la vez.         | false             |
+| `theme`         | `string`     | No        | light/dark para uso de colores.                  | "light"           |
+| `className`     | `string`     | No        | Clases de estilo personalizables.                | ""                |
+```
+
+```javascript
+import { Accordion } from 'groker/components'
+
+function App() {
+  const items = [
+    { title: 'Sección 1', content: 'Contenido de la primera sección.' },
+    { title: 'Sección 2', content: 'Contenido de la segunda sección.' },
+    { title: 'Sección 3', content: 'Contenido de la tercera sección.' },
+  ]
+
+  return <Accordion items={items} />
+}
+```
+
+---
+
+<a name="comp-radiogroup"></a>
+
+- `RadioGroup` : Grupo de opciones de radio button
+  <!-- IMAGEN: subir screenshot del RadioGroup y reemplazar este comentario por:
+  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
+  -->
+
+```
+Props:
+| Nombre      | Tipo         | Requerido | Descripción                                      | Valor por Defecto |
+|-------------|--------------|-----------|--------------------------------------------------|-------------------|
+| `name`      | `string`     | Si        | Nombre del grupo de radios.                      | -                 |
+| `options`   | `array`      | Si        | Array de objetos { value, label }.               | -                 |
+| `value`     | `string`     | Si        | Valor actualmente seleccionado.                  | -                 |
+| `onChange`  | `function`   | Si        | Función que se ejecuta al cambiar la selección.  | -                 |
+| `label`     | `string`     | No        | Título del grupo.                                | -                 |
+| `theme`     | `string`     | No        | light/dark para uso de colores.                  | "light"           |
+| `className` | `string`     | No        | Clases de estilo personalizables.                | ""                |
+```
+
+```javascript
+import { RadioGroup } from 'groker/components'
+
+function App() {
+  const [color, setColor] = React.useState('verde')
+
+  return (
+    <RadioGroup
+      name="color"
+      label="Elige un color"
+      options={[
+        { value: 'rojo', label: 'Rojo' },
+        { value: 'verde', label: 'Verde' },
+        { value: 'azul', label: 'Azul' },
+      ]}
+      value={color}
+      onChange={(e) => setColor(e.target.value)}
+    />
+  )
+}
+```
+
+---
+
+<a name="comp-checkbox"></a>
+
+- `Checkbox` : Casilla de verificación personalizada
+  <!-- IMAGEN: subir screenshot del Checkbox y reemplazar este comentario por:
+  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
+  -->
+
+```
+Props:
+| Nombre      | Tipo         | Requerido | Descripción                                      | Valor por Defecto |
+|-------------|--------------|-----------|--------------------------------------------------|-------------------|
+| `checked`   | `boolean`    | No        | Estado del checkbox (controlado).                | false             |
+| `onChange`  | `function`   | No        | Función que se ejecuta al cambiar el estado.     | -                 |
+| `label`     | `string`     | No        | Texto descriptivo del checkbox.                  | -                 |
+| `name`      | `string`     | No        | Nombre del input.                                | -                 |
+| `theme`     | `string`     | No        | light/dark para uso de colores.                  | "light"           |
+| `className` | `string`     | No        | Clases de estilo personalizables.                | ""                |
+```
+
+```javascript
+import { Checkbox } from 'groker/components'
+
+function App() {
+  const [checked, setChecked] = React.useState(false)
+
+  return (
+    <Checkbox
+      label="Acepto términos"
+      checked={checked}
+      onChange={() => setChecked(!checked)}
+    />
+  )
+}
+```
+
+---
+
+<a name="comp-textarea"></a>
+
+- `Textarea` : Área de texto multilínea
+  <!-- IMAGEN: subir screenshot del Textarea y reemplazar este comentario por:
+  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
+  -->
+
+```
+Props:
+| Nombre         | Tipo         | Requerido | Descripción                                      | Valor por Defecto |
+|----------------|--------------|-----------|--------------------------------------------------|-------------------|
+| `label`        | `string`     | No        | Texto que se muestra arriba del textarea.        | -                 |
+| `defaultValue` | `string`     | No        | Valor por defecto.                               | ""                |
+| `placeholder`  | `string`     | No        | Placeholder del textarea.                        | ""                |
+| `rows`         | `number`     | No        | Cantidad de filas visibles.                      | 4                 |
+| `name`         | `string`     | No        | Nombre del textarea.                             | ""                |
+| `onChange`     | `function`   | No        | Función que se ejecuta al cambiar el valor.      | -                 |
+| `theme`        | `string`     | No        | light/dark para uso de colores.                  | "light"           |
+| `className`    | `string`     | No        | Clases de estilo personalizables.                | ""                |
+```
+
+```javascript
+import { Textarea } from 'groker/components'
+
+function App() {
+  return (
+    <Textarea
+      label="Comentarios"
+      placeholder="Escribe algo..."
+      rows={3}
+    />
+  )
+}
+```
+
+---
+
+<a name="comp-avatar"></a>
+
+- `Avatar` : Avatar con imagen o iniciales
+  <!-- IMAGEN: subir screenshot del Avatar y reemplazar este comentario por:
+  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
+  -->
+
+```
+Props:
+| Nombre      | Tipo         | Requerido | Descripción                                      | Valor por Defecto |
+|-------------|--------------|-----------|--------------------------------------------------|-------------------|
+| `src`       | `string`     | No        | URL de la imagen.                                | -                 |
+| `alt`       | `string`     | No        | Texto alternativo de la imagen.                  | ""                |
+| `size`      | `number`     | No        | Tamaño en píxeles.                               | 40                |
+| `initials`  | `string`     | No        | Iniciales a mostrar si no hay imagen.            | -                 |
+| `theme`     | `string`     | No        | light/dark para uso de colores.                  | "light"           |
+| `className` | `string`     | No        | Clases de estilo personalizables.                | ""                |
+```
+
+```javascript
+import { Avatar } from 'groker/components'
+
+function App() {
+  return (
+    <div>
+      <Avatar initials="PI" size={40} />
+      <Avatar initials="JD" size={50} />
+      <Avatar src="https://example.com/avatar.jpg" size={50} />
+    </div>
+  )
+}
+```
+
+---
+
+<a name="comp-progressbar"></a>
+
+- `ProgressBar` : Barra de progreso con variantes de color
+  <!-- IMAGEN: subir screenshot del ProgressBar y reemplazar este comentario por:
+  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
+  -->
+
+```
+Props:
+| Nombre      | Tipo         | Requerido | Descripción                                      | Valor por Defecto |
+|-------------|--------------|-----------|--------------------------------------------------|-------------------|
+| `value`     | `number`     | No        | Valor actual del progreso.                       | 0                 |
+| `max`       | `number`     | No        | Valor máximo.                                    | 100               |
+| `label`     | `string`     | No        | Texto descriptivo.                               | -                 |
+| `showValue` | `boolean`    | No        | Muestra el porcentaje numérico.                  | true              |
+| `variant`   | `string`     | No        | Variante: primary/success/warning/error/info.    | "primary"         |
+| `theme`     | `string`     | No        | light/dark para uso de colores.                  | "light"           |
+| `className` | `string`     | No        | Clases de estilo personalizables.                | ""                |
+```
+
+```javascript
+import { ProgressBar } from 'groker/components'
+
+function App() {
+  return (
+    <div>
+      <ProgressBar value={65} label="Progreso" />
+      <ProgressBar value={30} variant="success" label="Éxito" />
+      <ProgressBar value={85} variant="warning" label="Advertencia" />
+    </div>
+  )
 }
 ```
 
