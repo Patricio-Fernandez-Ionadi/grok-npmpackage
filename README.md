@@ -405,9 +405,8 @@ function App() {
 <a name="comp-spinner"></a>
 
 - `Spinner` : Indicador de carga animado
-  <!-- IMAGEN: subir screenshot del Spinner y reemplazar este comentario por:
-  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
-  -->
+  ![image](https://github.com/user-attachments/assets/cc53ca8f-d14a-45bd-a439-1c1ca4402170)
+  
 
 ```
 Props:
@@ -436,9 +435,8 @@ function App() {
 <a name="comp-tooltip"></a>
 
 - `Tooltip` : Tooltip que muestra información al hacer hover
-  <!-- IMAGEN: subir screenshot del Tooltip y reemplazar este comentario por:
-  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
-  -->
+  ![image](https://github.com/user-attachments/assets/3bd69fbc-c834-4773-a959-ed939ccd0a10)
+  
 
 ```
 Props:
@@ -473,9 +471,7 @@ function App() {
 <a name="comp-badge"></a>
 
 - `Badge` : Etiqueta o insignia con variantes de color. Si se pasa `onClick`, se renderiza como botón clickeable.
-  <!-- IMAGEN: subir screenshot del Badge y reemplazar este comentario por:
-  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
-  -->
+  ![image](https://github.com/user-attachments/assets/d0e3b6c2-6a94-49af-a8b2-fb824c4cb021)
 
 ```
 Props:
@@ -512,9 +508,7 @@ function App() {
 <a name="comp-dropdown"></a>
 
 - `Dropdown` : Menú desplegable con click outside para cerrar
-  <!-- IMAGEN: subir screenshot del Dropdown abierto y reemplazar este comentario por:
-  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
-  -->
+  ![image](https://github.com/user-attachments/assets/618d1cf5-8ff3-4757-8391-17363cc6d3f4)
 
 ```
 Props:
@@ -549,9 +543,7 @@ function App() {
 <a name="comp-pagination"></a>
 
 - `Pagination` : Navegación de páginas
-  <!-- IMAGEN: subir screenshot de la Paginación y reemplazar este comentario por:
-  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
-  -->
+  ![image](https://github.com/user-attachments/assets/faa04831-928e-41f5-a7df-2f74935e82cc)
 
 ```
 Props:
@@ -585,9 +577,7 @@ function App() {
 <a name="comp-accordion"></a>
 
 - `Accordion` : Panel de secciones expandibles
-  <!-- IMAGEN: subir screenshot del Accordion abierto y reemplazar este comentario por:
-  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
-  -->
+  ![image](https://github.com/user-attachments/assets/d3d4fa19-2adb-4d74-9ac6-da68c2eadab3)
 
 ```
 Props:
@@ -618,9 +608,8 @@ function App() {
 <a name="comp-radiogroup"></a>
 
 - `RadioGroup` : Grupo de opciones de radio button
-  <!-- IMAGEN: subir screenshot del RadioGroup y reemplazar este comentario por:
-  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
-  -->
+  ![image](https://github.com/user-attachments/assets/3eaa3655-89eb-4d14-9e74-7cd0bcb4f32a)
+
 
 ```
 Props:
@@ -662,9 +651,7 @@ function App() {
 <a name="comp-checkbox"></a>
 
 - `Checkbox` : Casilla de verificación personalizada
-  <!-- IMAGEN: subir screenshot del Checkbox y reemplazar este comentario por:
-  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
-  -->
+  ![image](https://github.com/user-attachments/assets/735947ce-e19e-497b-a6ed-e797624a30ad)
 
 ```
 Props:
@@ -699,9 +686,7 @@ function App() {
 <a name="comp-textarea"></a>
 
 - `Textarea` : Área de texto multilínea
-  <!-- IMAGEN: subir screenshot del Textarea y reemplazar este comentario por:
-  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
-  -->
+  ![image](https://github.com/user-attachments/assets/418b9bb4-0171-4702-b6ad-984c8d2e70c6)
 
 ```
 Props:
@@ -736,9 +721,7 @@ function App() {
 <a name="comp-avatar"></a>
 
 - `Avatar` : Avatar con imagen o iniciales
-  <!-- IMAGEN: subir screenshot del Avatar y reemplazar este comentario por:
-  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
-  -->
+  ![image](https://github.com/user-attachments/assets/f3adc6e9-f239-488f-92cd-aa33a81dd8f8)
 
 ```
 Props:
@@ -771,9 +754,7 @@ function App() {
 <a name="comp-progressbar"></a>
 
 - `ProgressBar` : Barra de progreso con variantes de color
-  <!-- IMAGEN: subir screenshot del ProgressBar y reemplazar este comentario por:
-  ![image](https://github.com/user-attachments/assets/REEMPLAZAR_CON_UUID)
-  -->
+  ![image](https://github.com/user-attachments/assets/d7e3d157-789f-4a95-b5ee-e8ba454184a9)
 
 ```
 Props:
