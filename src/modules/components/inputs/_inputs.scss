@@ -60,7 +60,7 @@
 		.groker__date-button {
 			@include useThemeBg($white_light, $black-light);
 			width: 10%;
-			right: 0;
+			right: 15px;
 			position: absolute;
 		}
 	}

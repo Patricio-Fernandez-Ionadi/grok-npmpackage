@@ -104,7 +104,7 @@
 }
 .groker__input-field.groker__date-field .groker__date-button {
   width: 10%;
-  right: 0;
+  right: 15px;
   position: absolute;
 }
 
@@ -299,29 +299,36 @@
 .groker__badge {
   display: inline-flex;
   align-items: center;
+  border: none;
   border-radius: 999px;
   font-weight: 600;
   line-height: 1;
+  cursor: default;
+  text-decoration: none;
+}
+.groker__badge[onClick], .groker__badge[type=button] {
+  cursor: pointer;
+}
+.groker__badge.light {
+  color: #eee;
+}
+.groker__badge.dark {
+  color: #eee;
 }
 .groker__badge--default {
   background: #007d85;
-  color: #eee;
 }
 .groker__badge--success {
   background: #66bb6a;
-  color: #eee;
 }
 .groker__badge--warning {
   background: #ff9800;
-  color: #eee;
 }
 .groker__badge--error {
   background: #f44336;
-  color: #eee;
 }
 .groker__badge--info {
   background: #2f89fc;
-  color: #eee;
 }
 .groker__badge--sm {
   padding: 2px 8px;
@@ -452,14 +459,22 @@
 }
 
 .groker__accordion-body {
-  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
 }
 .groker__accordion-body--open {
-  max-height: 500px;
+  animation: groker-accordion-slide 0.25s ease;
 }
 
+@keyframes groker-accordion-slide {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 500px;
+    opacity: 1;
+  }
+}
 .groker__accordion-content {
   padding: 12px 16px;
   transition: color 0.2s ease;
@@ -517,6 +532,16 @@
   height: 0;
   position: absolute;
 }
+.groker__radiogroup-label input[type=radio]:checked + .groker__radiogroup-custom {
+  border-color: #007d85;
+}
+.groker__radiogroup-label input[type=radio]:checked + .groker__radiogroup-custom::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #007d85;
+}
 
 .groker__radiogroup-custom {
   width: 18px;
@@ -528,16 +553,6 @@
   justify-content: center;
   flex-shrink: 0;
   transition: border-color 0.2s ease;
-}
-input[type=radio]:checked + .groker__radiogroup-custom {
-  border-color: #007d85;
-}
-input[type=radio]:checked + .groker__radiogroup-custom::after {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #007d85;
 }
 
 .groker__checkbox {
@@ -558,6 +573,16 @@ input[type=radio]:checked + .groker__radiogroup-custom::after {
   height: 0;
   position: absolute;
 }
+.groker__checkbox input[type=checkbox]:checked + .groker__checkbox-custom {
+  border-color: #007d85;
+  background: #007d85;
+}
+.groker__checkbox input[type=checkbox]:checked + .groker__checkbox-custom::after {
+  content: "✓";
+  color: #eee;
+  font-size: 12px;
+  font-weight: bold;
+}
 
 .groker__checkbox-custom {
   width: 18px;
@@ -569,16 +594,6 @@ input[type=radio]:checked + .groker__radiogroup-custom::after {
   justify-content: center;
   flex-shrink: 0;
   transition: all 0.2s ease;
-}
-input[type=checkbox]:checked + .groker__checkbox-custom {
-  border-color: #007d85;
-  background: #007d85;
-}
-input[type=checkbox]:checked + .groker__checkbox-custom::after {
-  content: "✓";
-  color: #eee;
-  font-size: 12px;
-  font-weight: bold;
 }
 
 .groker__checkbox-label {
