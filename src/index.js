@@ -1,4 +1,4 @@
-import './theme/index.css'
+import './theme/index.scss'
 export * from './modules/components/index.js'
 export * from './modules/date/index.js'
 export * from './modules/icons/index.js'

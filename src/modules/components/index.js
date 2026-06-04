@@ -22,6 +22,7 @@ export { Badge } from './badge/Badge.jsx'
 export { Dropdown } from './dropdown/Dropdown.jsx'
 export { Pagination } from './pagination/Pagination.jsx'
 export { Accordion } from './accordion/Accordion.jsx'
+export { Navigation, NavItem } from './navigation/Navigation.jsx'
 
 // inputs
 export { RadioGroup } from './radiogroup/RadioGroup.jsx'
