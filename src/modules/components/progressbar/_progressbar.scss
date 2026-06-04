@@ -1,0 +1,48 @@
+.groker__progress {
+  width: 100%;
+}
+
+.groker__progress-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  font-size: $font-size-small;
+}
+
+.groker__progress-label {
+  color: $text;
+}
+
+.groker__progress-value {
+  color: $grey;
+}
+
+.groker__progress-track {
+  width: 100%;
+  height: 8px;
+  background: $grey_light;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.groker__progress-bar {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+
+  &--primary {
+    background: $primary;
+  }
+  &--success {
+    background: $success;
+  }
+  &--warning {
+    background: $warning;
+  }
+  &--error {
+    background: $error;
+  }
+  &--info {
+    background: $info;
+  }
+}

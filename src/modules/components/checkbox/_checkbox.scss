@@ -1,0 +1,47 @@
+.groker__checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  &.light {
+    color: $text;
+  }
+  &.dark {
+    color: $white;
+  }
+
+  input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+
+  input[type="checkbox"]:checked + .groker__checkbox-custom {
+    border-color: $primary;
+    background: $primary;
+    &::after {
+      content: '✓';
+      color: $white;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+}
+
+.groker__checkbox-custom {
+  width: 18px;
+  height: 18px;
+  border: 2px solid $grey;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all $fast;
+}
+
+.groker__checkbox-label {
+  font-size: $font-size-small;
+}

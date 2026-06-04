@@ -1,0 +1,57 @@
+.groker__accordion {
+  border: 1px solid $grey_light;
+  border-radius: $border-radius;
+  overflow: hidden;
+}
+
+.groker__accordion-item {
+  border-bottom: 1px solid $grey_light;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.groker__accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 12px 16px;
+  background: $white_light;
+  border: none;
+  cursor: pointer;
+  font-size: $font-size;
+  text-align: left;
+  @include useThemeText($black, $white);
+  @include useThemeBg($white_light, $black_light);
+
+  &:hover {
+    background: darken($white_light, 3%);
+  }
+
+  &--open {
+    background: darken($white_light, 5%);
+  }
+}
+
+.groker__accordion-icon {
+  font-size: $font-size-large;
+  line-height: 1;
+  margin-left: 8px;
+}
+
+.groker__accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+
+  &--open {
+    max-height: 500px;
+  }
+}
+
+.groker__accordion-content {
+  padding: 12px 16px;
+  @include useThemeText($text, $white);
+  @include useThemeBg($white, $black);
+}

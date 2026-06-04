@@ -1,0 +1,31 @@
+.groker__pagination {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.groker__pagination-btn {
+  min-width: 36px;
+  height: 36px;
+  border: 1px solid $grey_light;
+  background: $white;
+  color: $text;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-size: $font-size-small;
+
+  &:hover:not(:disabled) {
+    background: $primary;
+    color: $white;
+  }
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  &--active {
+    background: $primary;
+    color: $white;
+    border-color: $primary;
+  }
+}

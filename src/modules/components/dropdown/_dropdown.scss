@@ -1,0 +1,26 @@
+.groker__dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.groker__dropdown-trigger {
+  cursor: pointer;
+}
+
+.groker__dropdown-menu {
+  position: absolute;
+  z-index: 999;
+  min-width: 180px;
+  background: $white;
+  border: 1px solid $grey_light;
+  border-radius: $border-radius;
+  @extend %elevation-3;
+  overflow: hidden;
+
+  &--left {
+    left: 0;
+  }
+  &--right {
+    right: 0;
+  }
+}
