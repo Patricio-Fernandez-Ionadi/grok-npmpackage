@@ -6,6 +6,15 @@ export { Selector } from './inputs/selector/Selector.jsx'
 // buttons
 export { Button } from './button/Button.jsx'
 
+// burgermenu
+export { useToggle } from './burgermenu/useToggle'
+export { BurgerPlus } from './burgermenu/BurgerPlus'
+export { BurgerRotate90 } from './burgermenu/BurgerRotate90'
+export { BurgerCompress } from './burgermenu/BurgerCompress'
+export { BurgerRightArrow } from './burgermenu/BurgerRightArrow'
+export { BurgerLeftArrow } from './burgermenu/BurgerLeftArrow'
+export { BurgerSimple } from './burgermenu/BurgerSimple'
+
 // toggleswitch
 export { ToggleSwitch } from './toggleswitch/ToggleSwitch.jsx'
 

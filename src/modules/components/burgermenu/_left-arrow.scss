@@ -1,0 +1,14 @@
+.icon-menu__bar--left-arrow {
+  &::before,
+  &::after {
+    width: 30px;
+    top: -0.5em;
+    left: -0.1em;
+    transform: rotate(-35deg);
+  }
+
+  &::after {
+    transform: rotate(35deg);
+    top: 0.5em;
+  }
+}

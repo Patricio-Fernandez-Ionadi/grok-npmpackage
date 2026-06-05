@@ -1,0 +1,42 @@
+$bar-size: 40px;
+$bar-height: 5px;
+$bar-radius: 2.5px;
+$bar-color: #333;
+$bar-gap: 0.7em;
+$transition-speed: 0.2s;
+
+.icon-menu {
+  width: $bar-size;
+  height: $bar-size;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-menu__bar {
+  background: $bar-color;
+  width: $bar-size;
+  height: $bar-height;
+  border-radius: $bar-radius;
+  position: relative;
+  transition: all $transition-speed;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: $bar-color;
+    width: $bar-size;
+    height: $bar-height;
+    border-radius: $bar-radius;
+    top: -$bar-gap;
+    transition: all $transition-speed ease;
+  }
+
+  &::after {
+    top: $bar-gap;
+  }
+}

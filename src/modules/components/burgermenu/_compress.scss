@@ -1,0 +1,6 @@
+.icon-menu__bar--compress {
+  &::before,
+  &::after {
+    top: 0;
+  }
+}

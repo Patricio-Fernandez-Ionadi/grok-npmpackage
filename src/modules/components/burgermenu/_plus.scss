@@ -1,0 +1,13 @@
+.icon-menu__bar--plus {
+  transform: rotate(90deg);
+
+  &::before,
+  &::after {
+    transform: rotate(-90deg);
+    top: 0;
+  }
+
+  &::after {
+    height: 0;
+  }
+}
